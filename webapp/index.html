@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JQuery/jquery-1.11.0.min.js"></script>
+    <script src="fontawesome-free-5.15.4-web/js/all.min.js"></script>
+    <link href="fontawesome-free-5.15.4-web/css/fontawesome.min.css" rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100%;
+            font-family: Arial,Helvetica,sans-serif;
+            position: relative;
+            overflow-y:hidden
+        }
+        .windows{
+            width: 100%;
+            height: 200vh;
+            position: relative;
+        }
+        .win1{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background-image: url("img/bg.png");
+        }
+        .windows>img{
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            transform: scale(1.6);
+            animation: window_img 1s ease-out forwards;
+        }
+        .table{
+            width: 100%;
+            height: 20vh;
+            position: relative;
+        }
+        .bg{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            user-select: none;
+        }
+        .bg>h1{
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffffff;
+            letter-spacing: 10px;
+            font-weight: 100;
+            z-index: 1;
+            opacity: 0;
+            animation: bg_h1 0.5s ease-out forwards 0.3s;
+        }
+        .bg>p{
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffffff;
+            letter-spacing: 10px;
+            font-weight: 100;
+            z-index: 1;
+            animation:bg_p 0.5s ease-out forwards;
+        }
+        .bg>h5{
+            position: absolute;
+            top: 1%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffffff;
+            letter-spacing: 10px;
+            font-weight: 100;
+            z-index: 1;
+            animation: bg_h5 0.3s ease-out forwards 0.6s;
+        }
+        .bg>h6{
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffffff;
+            letter-spacing: 5px;
+            font-weight: 100;
+            z-index: 1;
+            animation: bg_h6 0.5s ease-out forwards;
+        }
+        #downicon1{
+            z-index: 1;
+            color: #ffffff;
+            position: absolute;
+            bottom: 2vh;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bg_i 1s infinite;
+        }
+        #downicon2{
+            z-index: 1;
+            color: #ffffff;
+            position: absolute;
+            bottom: 0vh;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bg_i 0.5s infinite;
+        }
+
+        @keyframes bg_h1 {
+            from{
+                top: 70%;
+                opacity: 0;
+            }
+            to{
+                top: 30%;
+                opacity: 1;
+            }
+        }
+        @keyframes bg_h5 {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        @keyframes bg_h6 {
+            from{
+                top: 100%;
+                opacity: 0;
+            }
+            to{
+                top: 80%;
+                opacity: 1;
+            }
+        }
+        @keyframes bg_p {
+            from{
+                top: 80%;
+                opacity: 0;
+            }
+            to{
+                top: 50%;
+                opacity: 1;
+            }
+        }
+        @keyframes window_img {
+            from{
+                transform: scale(1.6);
+            }
+            to{
+                transform: scale(1);
+            }
+        }
+        @keyframes bg_i {
+            0%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+
+
+        .win2{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background-image: url("img/bg.png");
+        }
+        .container>img{
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+
+            transform: scale(1);
+            animation: window_img1 1s ease-out forwards;
+        }
+        #upicon1{
+            z-index: 1;
+            color: #ffffff;
+            position: absolute;
+            top: 100vh;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bg_i 1s infinite;
+        }
+        #upicon2{
+            z-index: 1;
+            color: #ffffff;
+            position: absolute;
+            top: 102vh;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bg_i 1s infinite;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
+
+
+
+
+
+</head>
+<body>
+<!-- -->
+<div class="windows">
+    <div class="win1" >
+        <div class="table" id="t1">
+            <div class="bg" id="bg1">
+                <h1>If you have a friend afar who knows your heart</h1>
+                <p>Welcome to </p>
+                <h5>Designed by Han</h5>
+                <h6>Click the button to enter</h6>
+                <span id="di">
+        <i class="fa fa-angle-down fa-3x" aria-hidden="true" id="downicon1"></i>
+        <i class="fa fa-angle-down fa-3x" aria-hidden="true" id="downicon2"></i>
+      </span>
+            </div>
+            <span id="ui">
+      <span class="fa fa-angle-up fa-3x" aria-hidden="true" id="upicon1"></span>
+      <span class="fa fa-angle-up fa-3x" aria-hidden="true" id="upicon2"></span>
+    </span>
+        </div>
+    </div>
+
+
+    <div class="win2">
+        <div class="table" id="t2">
+            <div class="bg" id="bg2">
+                <h1>Distance can't keep you two apart</h1>
+                <p>my personal blog</p>
+                <h6>Actually, I'm building it very slowly</h6>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+
+    $('#di').on('click',()=> {
+        $('html,body').animate({
+            scrollTop: $('#bg2').offset().top
+        },{ duration: 400, easing: "swing" });
+        return false;
+    })
+
+    $('#ui').on('click',()=> {
+        $('html,body').animate({
+            scrollTop: $('#bg1').offset().top
+        },{ duration: 400, easing: "swing" });
+        return false;
+    })
+
+
+
+    function checkMouseScroll() {
+        let p = 0;
+        let t = 0;
+        $(window).scroll(function () {
+            p = $(this).scrollTop();
+
+            if (t <= p) {
+
+            }
+
+            else {
+            }
+            t = p;
+        })
+    }
+
+</script>
+</body>
+</html>
